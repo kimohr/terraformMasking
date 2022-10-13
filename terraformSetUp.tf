@@ -18,6 +18,7 @@ provider "snowflake" {
 
   // optional
   role = "ACCOUNTADMIN"
+  warehouse = "DATALOAD"
 }
 
 resource "snowflake_database" "simple" {
@@ -61,35 +62,35 @@ resource snowflake_user user {
   must_change_password = false
 }
 
-resource "snowflake_schema" "test" {
-  database            = snowflake_database.simple.name
-  name                = "testSCH"
-  data_retention_days = snowflake_database.simple.data_retention_time_in_days
-}
+# resource "snowflake_schema" "test" {
+#   database            = snowflake_database.simple.name
+#   name                = "testSCH"
+#   data_retention_days = snowflake_database.simple.data_retention_time_in_days
+# }
 
-resource "snowflake_tag" "this" {
-  name     = upper("test_tag")
-  database = snowflake_database.simple.name
-  schema   = snowflake_schema.test.name
-}
+# resource "snowflake_tag" "this" {
+#   name     = upper("test_tag")
+#   database = snowflake_database.simple.name
+#   schema   = snowflake_schema.test.name
+# }
 
-resource "snowflake_masking_policy" "example_masking_policy" {
-  name               = "EXAMPLE_MASKING_POLICY"
-  database           = snowflake_database.simple.name
-  schema             = snowflake_schema.test.name
-  value_data_type    = "string"
-  masking_expression = "case when current_role() in ('ACCOUNTADMIN') then val else sha2(val, 512) end"
-  return_data_type   = "string"
-}
+# resource "snowflake_masking_policy" "example_masking_policy" {
+#   name               = "EXAMPLE_MASKING_POLICY"
+#   database           = snowflake_database.simple.name
+#   schema             = snowflake_schema.test.name
+#   value_data_type    = "string"
+#   masking_expression = "case when current_role() in ('ACCOUNTADMIN') then val else sha2(val, 512) end"
+#   return_data_type   = "string"
+# }
 
-resource "snowflake_tag_masking_policy_association" "name" {
-  tag_id                  = snowflake_tag.this.id
-  masking_policy_id       = snowflake_masking_policy.example_masking_policy.id
-}
+# resource "snowflake_tag_masking_policy_association" "name" {
+#   tag_id                  = snowflake_tag.this.id
+#   masking_policy_id       = snowflake_masking_policy.example_masking_policy.id
+# }
 
 resource snowflake_user_grant grant {
   user_name = "user1"
-  privilege = "SELECT"
+  privilege = "MONITOR"
 
   roles = [
     "mask_adm",
