@@ -86,3 +86,14 @@ resource "snowflake_tag_masking_policy_association" "name" {
   tag_id                  = snowflake_tag.this.id
   masking_policy_id       = snowflake_masking_policy.example_masking_policy.id
 }
+
+resource snowflake_user_grant grant {
+  user_name = "user1"
+  privilege = "SELECT"
+
+  roles = [
+    "mask_adm",
+  ]
+
+  with_grant_option = true
+}
