@@ -1,0 +1,28 @@
+# This file is maintained automatically by "terraform init".
+# Manual edits may be lost in future updates.
+
+provider "registry.terraform.io/snowflake-labs/snowflake" {
+  version     = "0.47.0"
+  constraints = "0.47.0"
+  hashes = [
+    "h1:yfDsvBAAOnjV7IqGECngteN8ByUoyaddEofJqqZ50Ks=",
+    "zh:04ac0cc10f0fe156d97336119d11c8232e0e37ade481e63610c093535d880319",
+    "zh:2caa173d73b97b2ede77f75dab7691c1bf4d3a3d79b4cd1555c74444eacd65be",
+    "zh:39670ddf6b32ccdef922ce790deee778b95d1a8760d9857b93362846505e6d9e",
+    "zh:5d0fe703e0b06e1891706d5f96c488b01fca7c80fc49f9b3f70c937bdaa4ff0f",
+    "zh:5ed5ab24b2180021cd5a4733104c237c446b441346bd9025b093189a422dcb9b",
+    "zh:76e72f651ca0ffe3ccf4aa9bfbf3c1c238503d4064c93a7d7d12e149cbc18246",
+    "zh:7b21a3e0fd83ca41e25ab424e5ebe71af53f715306bd59784307e0b47a288f34",
+    "zh:822b7b9b439268341b6b9ad46b0a8442f862aec3f1bde3e3510a237bdc214e37",
+    "zh:95296a19fa5b5a1fefafc27820941e5323f0df2ffc735141004ba398d3474ccd",
+    "zh:9e233230af3d37ce5e9cd62feb6c58ad71869139d6529448c7df30c4e39c4023",
+    "zh:9e5abb7955884c52e7840f1aac6cda7eeb5b5001125b813656a026748a018d39",
+    "zh:a0e65103470067b77fb2dd79319a3e3e99eef876443e24ce3cf5b1d4452b29cc",
+    "zh:b3637532a7c646556e3743f2e0398a9266cc2ac864cce54ea9750eb5fcfe9fa9",
+    "zh:c81958ca125e221a6bb3b3ac4920723ee39f478f6834564190152229beddeebc",
+    "zh:d1a67f427e9e1d7bd1031e37b2ceae7476cef9ca8ececaa9897819e6b8bda6d8",
+    "zh:f4f0b8d286c109ccbbe9c2d088876d6b2fb8be82389c47a0888025f9b3d69a21",
+    "zh:f569b65999264a9416862bca5cd2a6177d94ccb0424f3a4ef424428912b9cb3c",
+    "zh:fa2d26531e84863c27cabaae7a314a6b08fac3036892755c52515d5448c25337",
+  ]
+}
